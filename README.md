@@ -3,10 +3,8 @@
 A defensive security automation project that connects **Wazuh vulnerability
 detection** with a controlled **Ansible patch deployment pipeline**.
 
-The project is intentionally designed so that a vulnerability is **not patched
-simply because Wazuh detects it**. A patch must already exist in the approved
-repository and must match the detected CVE and operating system before the
-pipeline can deploy it.
+The project is designed to use Wazuh to identify vulnerabilities present on monitored systems and automatically patch the affected endpoints when a corresponding **pre-approved patch** is available in the patch repository. The pipeline matches the detected vulnerability with the appropriate approved patch and operating system before deploying the remediation through the patch automation process.
+
 
 ## Architecture
 
