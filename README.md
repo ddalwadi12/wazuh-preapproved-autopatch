@@ -122,44 +122,6 @@ The target endpoints must be configured so that the Patch Automation Server can 
 
 After the environment has been created, configure the scripts with the correct IP addresses, credentials, paths, and environment-specific settings before executing the automation workflow.
 
-
-## Installation
-
-```bash
-git clone https://github.com/YOUR-USERNAME/wazuh-auto-patching-pipeline.git
-cd wazuh-auto-patching-pipeline
-
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-## Configuration
-
-Do **not** put passwords directly in either Python script.
-
-Use `.env.example` as a reference, then export the required values in your
-shell or another secure secret-management method.
-
-Example:
-
-```bash
-export WAZUH_INDEXER_URL="https://wazuh-indexer.example.local:9200"
-export WAZUH_USERNAME="admin"
-export WAZUH_PASSWORD="your-secret"
-export PATCH_REMOTE_HOST="patch-automation.example.local"
-
-export PATCH_SERVER_BASE_URL="http://patch-automation.example.local:8080"
-export WINDOWS_ANSIBLE_USER='DOMAIN\\patch-user'
-export WINDOWS_ANSIBLE_PASSWORD="your-secret"
-```
-
-For host mappings:
-
-```bash
-export HOST_ADDRESS_JSON='{"WindowsAgent":"10.10.10.20","UbuntuAgent":"10.10.10.21"}'
-```
-
 ## Running the pipeline
 
 ### 1. Collect Wazuh vulnerabilities
