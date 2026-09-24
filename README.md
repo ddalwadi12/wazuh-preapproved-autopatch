@@ -51,7 +51,7 @@ server, and remediation is then pushed only to the endpoints that require an
 approved patch.
 
 <p align="center">
-  <img src="docs/network-topology.png" alt="Wazuh Automated Patch Management Network Topology" width="850">
+  <img src="docs/patch_automation_lab_network.png" alt="Wazuh Automated Patch Management Network Topology" width="850">
 </p>
 
 ### Data flow
