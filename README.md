@@ -108,6 +108,21 @@ approved patch.
   require.
 - **No secrets in source:** credentials are read from environment variables.
 
+## Environment Setup
+
+Before running the project, you must first build the required lab or production environment and deploy the scripts to the appropriate systems.
+
+The environment should include a Wazuh Server/Indexer, a Patch Automation Server, and one or more Windows or Linux endpoints that will be monitored and patched.
+
+Install the wazuh_vulnerability_collect.py script on the system that has access to the Wazuh Indexer. This script is responsible for collecting vulnerability information, filtering the results, generating the vulnerabilities.csv file, and transferring it to the Patch Automation Server.
+
+Install the patch_pipeline.py script on the Patch Automation Server. This system should also contain the approved patch repository and Ansible configuration required to deploy patches to the target endpoints.
+
+The target endpoints must be configured so that the Patch Automation Server can communicate with them using the appropriate management protocol, such as SSH for Linux systems or WinRM for Windows systems.
+
+After the environment has been created, configure the scripts with the correct IP addresses, credentials, paths, and environment-specific settings before executing the automation workflow.
+
+
 ## Installation
 
 ```bash
