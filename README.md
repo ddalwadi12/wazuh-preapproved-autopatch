@@ -50,49 +50,9 @@ collected from the Wazuh Indexer, transferred to a dedicated patch automation
 server, and remediation is then pushed only to the endpoints that require an
 approved patch.
 
-```text
-                         Security / Management Network
-
-+-----------------------+        HTTPS : 9200
-| Windows/Linux         |-------------------------------+
-| Wazuh Agents          |                               |
-+-----------------------+                               v
-                                              +----------------------+
-                                              | Wazuh Indexer /      |
-                                              | OpenSearch           |
-                                              +----------+-----------+
-                                                         |
-                                                         | Python collector
-                                                         | generates
-                                                         | vulnerabilities.csv
-                                                         v
-                                              +----------------------+
-                                              | Wazuh / Collector    |
-                                              | Machine              |
-                                              +----------+-----------+
-                                                         |
-                                                         | SCP / SSH : 22
-                                                         v
-                                              +----------------------+
-                                              | Patch Automation     |
-                                              | Server               |
-                                              | Python + Ansible     |
-                                              +----+------------+----+
-                                                   |            |
-                              HTTP : 8080          |            | SSH : 22
-                              patch download       |            | Linux mgmt
-                                                   |            |
-                                                   |            v
-                                                   |      +------------------+
-                                                   |      | Linux Endpoints  |
-                                                   |      +------------------+
-                                                   |
-                                                   | WinRM : 5985
-                                                   v
-                                            +------------------+
-                                            | Windows Endpoints|
-                                            +------------------+
-```
+<p align="center">
+  <img src="docs/network-topology.png" alt="Wazuh Automated Patch Management Network Topology" width="850">
+</p>
 
 ### Data flow
 
