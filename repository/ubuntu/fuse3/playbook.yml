@@ -1,0 +1,44 @@
+---
+# CANDIDATE FOR REVIEW - not yet approved.
+#
+# This applies the reviewed patch artifact named in metadata.json. It must not
+# be changed into a "state: latest" upgrade: that would fetch whatever the
+# distribution feed serves at run time instead of the binary that was reviewed,
+# so two hosts patched a week apart would end up on different versions.
+#
+# patch_src, patch_dest and fixes_version are supplied by the engine.
+#
+# Rollback: reinstall the previous artifact through the same shape.
+- name: Apply reviewed patch for fuse3
+  hosts: linux_servers
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Stage the reviewed patch artifact on the host
+      ansible.builtin.copy:
+        src: "{{ patch_src }}"
+        dest: "{{ patch_dest }}"
+        mode: "0644"
+
+    - name: Install the staged patch
+      ansible.builtin.apt:
+        deb: "{{ patch_dest }}"
+
+    - name: Re-read installed packages
+      ansible.builtin.package_facts:
+        manager: auto
+
+    - name: Assert fuse3 now reports the fixed version
+      ansible.builtin.assert:
+        that:
+          - "'fuse3' in ansible_facts.packages"
+          - >-
+            ansible_facts.packages['fuse3'][0].version is
+            version(fixes_version, '>=')
+        fail_msg: >-
+          fuse3 is still below {{ fixes_version }} after the patch.
+        success_msg: "fuse3 is at or above {{ fixes_version }}."
+
+    - name: Report the resulting state
+      ansible.builtin.debug:
+        msg: "fuse3 patched to {{ fixes_version }} on {{ inventory_hostname }}"
