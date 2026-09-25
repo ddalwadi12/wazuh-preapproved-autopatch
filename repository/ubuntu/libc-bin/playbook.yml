@@ -1,0 +1,22 @@
+---
+# CANDIDATE FOR REVIEW - not yet approved.
+#
+# Rollback: this playbook only advances libc-bin to the distribution's latest
+# available version. To roll back, pin the previous version explicitly.
+- name: Remediate libc-bin
+  hosts: linux_servers
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Gather installed packages
+      ansible.builtin.package_facts:
+        manager: auto
+
+    - name: Update libc-bin to the latest available version
+      ansible.builtin.apt:
+        name: libc-bin
+        state: latest
+
+    - name: Report the resulting version
+      ansible.builtin.debug:
+        msg: "libc-bin processed on {{ inventory_hostname }}"
