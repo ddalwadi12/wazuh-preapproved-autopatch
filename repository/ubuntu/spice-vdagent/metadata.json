@@ -1,0 +1,18 @@
+{
+  "package_name": "spice-vdagent",
+  "operating_system": "ubuntu",
+  "supported_versions": [],
+  "approval_status": "APPROVED",
+  "approval_date": "2026-08-03",
+  "playbook_version": "1.0",
+  "playbook_hash": "bd1a766db921baa093fa7a03dc235d24af69413057f0d65f531d045a99238a96",
+  "approved_by": "security-admin",
+  "description": "Remediate spice-vdagent on ubuntu.",
+  "patch_file": "patches/spice-vdagent_0.23.0-1_amd64.deb",
+  "patch_sha256": "487f06fc94f634fe8f3c68428fb424e8948fbd283d1261aa7073ad6d2f840e21",
+  "fixes_version": "0.23.0-1",
+  "cves": [
+    "CVE-2026-57965",
+    "CVE-2026-57966"
+  ]
+}
