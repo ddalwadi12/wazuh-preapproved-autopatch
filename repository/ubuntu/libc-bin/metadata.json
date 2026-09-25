@@ -1,0 +1,11 @@
+{
+  "package_name": "libc-bin",
+  "operating_system": "ubuntu",
+  "supported_versions": [],
+  "approval_status": "REJECTED",
+  "approval_date": "2026-07-27",
+  "playbook_version": "1.0",
+  "playbook_hash": "cfdf12eb26108d7b3553d4591a3c91d884d1484d4da0c2bc785e4b7316d61a5a",
+  "approved_by": "admin",
+  "description": "Remediate libc-bin on ubuntu. [REJECTED: glibc ships as a set from one source; one entry stages one artifact, so it cannot be patched safely here] [REJECTED: glibc ships as a set from one source; one entry stages one artifact, so it cannot be patched safely here]"
+}
