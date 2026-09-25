@@ -1,0 +1,37 @@
+---
+# APPROVED REMEDIATION - reviewed by the security team.
+#
+# The target DOWNLOADS the installer from the patch server; the sealed SHA-256
+# travels with it and win_get_url verifies it on arrival.
+#
+# 'arguments: /S' is mandatory, not cosmetic. The win64 build is an NSIS
+# installer: run without it, the executable opens a GUI wizard and waits for a
+# click. Ansible has no interactive desktop, so the process runs forever and
+# the play hangs with no error.
+#
+# creates_path/creates_version let the module tell "already patched" from
+# "needs installing", which is what makes a re-run idempotent for a non-MSI.
+- name: Apply reviewed patch for VLC media player
+  hosts: windows_servers
+  become: false
+  gather_facts: true
+  tasks:
+    - name: Fetch the reviewed patch artifact from the patch server
+      ansible.windows.win_get_url:
+        url: "{{ patch_url }}"
+        dest: "{{ patch_dest }}"
+        checksum: "{{ patch_sha256 }}"
+        checksum_algorithm: sha256
+        force: false
+
+    - name: Install the staged patch
+      ansible.windows.win_package:
+        path: "{{ patch_dest }}"
+        arguments: /S
+        state: present
+        creates_path: C:\Program Files\VideoLAN\VLC\vlc.exe
+        creates_version: "{{ fixes_version }}"
+
+    - name: Report the resulting state
+      ansible.builtin.debug:
+        msg: "VLC media player patched to {{ fixes_version }} on {{ inventory_hostname }}"
