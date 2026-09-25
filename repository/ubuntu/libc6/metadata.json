@@ -1,0 +1,11 @@
+{
+  "package_name": "libc6",
+  "operating_system": "ubuntu",
+  "supported_versions": [],
+  "approval_status": "REJECTED",
+  "approval_date": "2026-07-27",
+  "playbook_version": "1.0",
+  "playbook_hash": "f66882e8d35bc079c199e895f171477076460b310ed0755036532ab4e62e8e90",
+  "approved_by": "admin",
+  "description": "Remediate libc6 on ubuntu. [REJECTED: glibc ships as a set from one source; one entry stages one artifact, so it cannot be patched safely here] [REJECTED: glibc ships as a set from one source; one entry stages one artifact, so it cannot be patched safely here]"
+}
