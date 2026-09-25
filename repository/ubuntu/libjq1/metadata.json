@@ -1,0 +1,21 @@
+{
+  "package_name": "libjq1",
+  "operating_system": "ubuntu",
+  "supported_versions": [],
+  "approval_status": "APPROVED",
+  "approval_date": "2026-08-03",
+  "playbook_version": "1.0",
+  "playbook_hash": "18b1071eb6b47fad5e6d8f0b27b1835d69501ea861ce78d9c071cca8e254e260",
+  "approved_by": "security-admin",
+  "description": "Remediate libjql on ubuntu.",
+  "patch_file": "patches/libjq1_1.8.1-4ubuntu2_amd64.deb",
+  "patch_sha256": "3ced45ef4154cce59ce9fc74cc606b7361fa1b2f088b31a903d54fbcee75cb43",
+  "fixes_version": "1.8.1-4ubuntu2",
+  "cves": [
+    "CVE-2026-41256",
+    "CVE-2026-41257",
+    "CVE-2026-43895",
+    "CVE-2026-43896",
+    "CVE-2026-44777"
+  ]
+}
