@@ -1,0 +1,22 @@
+{
+  "package_name": "VLC media player",
+  "operating_system": "windows",
+  "supported_versions": [],
+  "approval_status": "APPROVED",
+  "approval_date": "2026-08-02",
+  "playbook_version": "2.0",
+  "playbook_hash": "dc400082d4931383e80ca2ce5ed0ddc1e6266c7feb0944dfaa13b99f6659615a",
+  "approved_by": "security-admin",
+  "description": "Apply the reviewed VLC 3.0.21 installer on Windows.",
+  "cves": [
+    "CVE-2017-8310",
+    "CVE-2017-8312",
+    "CVE-2017-8313",
+    "CVE-2019-13615",
+    "CVE-2019-5439",
+    "CVE-2019-5460"
+  ],
+  "patch_file": "patches/vlc-3.0.21-win64.exe",
+  "patch_sha256": "9742689a50e96ddc04d80ceff046b28da2beefd617be18166f8c5e715ec60c59",
+  "fixes_version": "3.0.21"
+}
