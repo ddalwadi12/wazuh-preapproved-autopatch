@@ -1,0 +1,18 @@
+{
+  "package_name": "fuse3",
+  "operating_system": "ubuntu",
+  "supported_versions": [],
+  "approval_status": "APPROVED",
+  "approval_date": "2026-08-03",
+  "playbook_version": "1.0",
+  "playbook_hash": "0046f56ad6e4e43aaa29669b5cc118b4c1358fb1ec22b79ab8c66d4950b4dbbb",
+  "approved_by": "security-admin",
+  "description": "Remediate fuse3 on ubuntu.",
+  "patch_file": "patches/fuse3_3.18.2-1_amd64.deb",
+  "patch_sha256": "a867fe3be1cbca271df70748b003232592c052233be5976d2a590f02327158db",
+  "fixes_version": "3.18.2-1",
+  "cves": [
+    "CVE-2026-33150",
+    "CVE-2026-33179"
+  ]
+}
