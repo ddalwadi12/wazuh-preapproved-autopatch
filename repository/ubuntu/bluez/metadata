@@ -1,0 +1,21 @@
+{
+  "package_name": "bluez",
+  "operating_system": "ubuntu",
+  "supported_versions": [],
+  "approval_status": "APPROVED",
+  "approval_date": "2026-08-03",
+  "playbook_version": "1.0",
+  "playbook_hash": "624ccc0ca73021f9c54cd7d468a6dd0617c8c67a3ec91b64b3944e5cb64089e6",
+  "approved_by": "security-admin",
+  "description": "Remediate bluez on ubuntu.",
+  "patch_file": "patches/bluez_5.85-4ubuntu0.1_amd64.deb",
+  "patch_sha256": "ea043d3c3b7da68754c3075d895e14044ae2a59e599230eed0a071d0b747af14",
+  "fixes_version": "5.85-4ubuntu0.1",
+  "cves": [
+    "CVE-2023-44431",
+    "CVE-2023-51580",
+    "CVE-2023-51589",
+    "CVE-2023-51592",
+    "CVE-2023-51596"
+  ]
+}
