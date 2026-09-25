@@ -1,0 +1,11 @@
+{
+  "package_name": "rust-coreutils",
+  "operating_system": "ubuntu",
+  "supported_versions": [],
+  "approval_status": "REJECTED",
+  "approval_date": "2026-07-27",
+  "playbook_version": "1.0",
+  "playbook_hash": "98db7832cb0d37a5ccecf8e1a0a2830aee9c95e7d83c3e8cfa9836be1b4780ee",
+  "approved_by": "admin",
+  "description": "Remediate rust-coreutils on ubuntu. [REJECTED: replaces core system utilities; excluded from automated patching] [REJECTED: replaces core system utilities; excluded from automated patching]"
+}
