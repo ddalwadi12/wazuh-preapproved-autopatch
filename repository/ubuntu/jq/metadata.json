@@ -1,0 +1,21 @@
+{
+  "package_name": "jq",
+  "operating_system": "ubuntu",
+  "supported_versions": [],
+  "approval_status": "APPROVED",
+  "approval_date": "2026-08-03",
+  "playbook_version": "1.0",
+  "playbook_hash": "437d177725445b06e4b3fdf8f95dca0ecb53c640c63a9a4e225aca24a76dfbb0",
+  "approved_by": "security-admin",
+  "description": "Remediate jq on ubuntu.",
+  "patch_file": "patches/jq_1.8.1-4ubuntu2_amd64.deb",
+  "patch_sha256": "bb7f69de12414f6e52eea1da952ed7226b8e3fd9db74f93bb8ea3f2f39f4836f",
+  "fixes_version": "1.8.1-4ubuntu2",
+  "cves": [
+    "CVE-2026-41256",
+    "CVE-2026-41257",
+    "CVE-2026-43895",
+    "CVE-2026-43896",
+    "CVE-2026-44777"
+  ]
+}
