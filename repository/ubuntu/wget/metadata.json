@@ -1,0 +1,17 @@
+{
+  "package_name": "wget",
+  "operating_system": "ubuntu",
+  "supported_versions": [],
+  "approval_status": "APPROVED",
+  "approval_date": "2026-08-03",
+  "playbook_version": "1.0",
+  "playbook_hash": "7937950a1f9a06a6da0e8e552db714cb4f2fd87bea7f01da84f98210faeed681",
+  "approved_by": "security-admin",
+  "description": "Apply the reviewed patch for wget on ubuntu.",
+  "cves": [
+    "CVE-2026-15146"
+  ],
+  "patch_file": "patches/wget_1.25.0-2ubuntu4.3_amd64.deb",
+  "patch_sha256": "77028a0b3d92bfdfa64c3446f124302535748486e67d4a365adec61210cbee3a",
+  "fixes_version": "1.25.0-2ubuntu4.3"
+}
