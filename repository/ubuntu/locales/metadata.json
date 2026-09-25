@@ -1,0 +1,11 @@
+{
+  "package_name": "locales",
+  "operating_system": "ubuntu",
+  "supported_versions": [],
+  "approval_status": "REJECTED",
+  "approval_date": "2026-07-27",
+  "playbook_version": "1.0",
+  "playbook_hash": "1e5e19874f998516514669c5585584be64fce0f2aeff567b1aecd29bd3b25a7e",
+  "approved_by": "admin",
+  "description": "Remediate locales on ubuntu. [REJECTED: glibc ships as a set from one source; one entry stages one artifact, so it cannot be patched safely here] [REJECTED: glibc ships as a set from one source; one entry stages one artifact, so it cannot be patched safely here]"
+}
