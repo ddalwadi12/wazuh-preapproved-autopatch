@@ -1,0 +1,22 @@
+---
+# CANDIDATE FOR REVIEW - not yet approved.
+#
+# Rollback: this playbook only advances rust-coreutils to the distribution's latest
+# available version. To roll back, pin the previous version explicitly.
+- name: Remediate rust-coreutils
+  hosts: linux_servers
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Gather installed packages
+      ansible.builtin.package_facts:
+        manager: auto
+
+    - name: Update rust-coreutils to the latest available version
+      ansible.builtin.apt:
+        name: rust-coreutils
+        state: latest
+
+    - name: Report the resulting version
+      ansible.builtin.debug:
+        msg: "rust-coreutils processed on {{ inventory_hostname }}"
